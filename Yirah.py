@@ -295,20 +295,17 @@ if __name__ == "__main__":
             repeticion_menu = False
 
     if escoger == "Guerrero":
+        personaje_main = Guerrero(nombre_jugador, edad_jugador)
         print(caracter1)
     elif escoger == "Caballero":
+        personaje_main = Caballero(nombre_jugador, edad_jugador)
         print(caracter2)
     elif escoger == "Asesino":
-        print(caracter3)
-
-    if escoger == "Guerrero":
-        personaje_main = Guerrero(nombre_jugador, edad_jugador)
-    elif escoger == "Caballero":
-        personaje_main = Caballero(nombre_jugador, edad_jugador)
-    elif escoger == "Asesino":
         personaje_main = Asesino(nombre_jugador, edad_jugador)
+        print(caracter3)
 
     escribir_tiempo_real(f"\nTu personaje ha sido creado:\nNombre: {personaje_main.nombre}\nEdad: {personaje_main.edad}\nClase: {escoger}\nVida: {personaje_main.vida}")
     siguiente = input("\nPulsa 's' para continuar: ")
     if siguiente == "s":
         limpiar_pantalla()
+    print(personaje_main.caminar())
